@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .todolist{
+            background-color: rgb(139, 97, 110);
+            text-align: center;
+            padding: 30px 30px;
+        }
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id='todo' class="todolist">
+        <h2>My To Do List</h2>
+        <form action="/" method="POST">
+            <input type="text" placeholder="Title" id='title' name="title">
+            <button type="submit" value='Add'>Add</button>
+        </form>
+    </div>
+    <h2 style="background-color: red; padding: 10px 10px; text-align: center;">
+        Added Tasks
+    </h2>
+    <table style="width: 100%;">
+        <tr>
+
+            <th class="heading" style="border: 1px solid black; height: 50px; width: 100%; padding: 10px 10px; text-align: center; background-color: rgb(170, 46, 118);" >Title</th>
+        </tr>
+        <% for(var i=0;i< todolist.length;i++) { %>
+            <tr>
+                <td style="position: relative; border: 1px solid black; background-color: chartreuse; width: 100%;"><%= todolist[i] %></td>
+                <td><button style="background-color: red; font-style: normal;"><a href="/delete?element=<%= todolist[i] %>" class="btn">Delete</a></button></td>
+            </tr>
+            
+        <% } %> 
+        
+    
+    </table>
+    
+</body>
+</html>
